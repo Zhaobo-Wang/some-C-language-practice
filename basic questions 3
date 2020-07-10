@@ -1,0 +1,30 @@
+//question: For this exercise you should be able to write a logical expression
+//which checks if some integer x consists of exactly 5 digits.
+// Ex: 30498 and -14004 are 5-digit numbers,
+// while 1098, -1 and 34 are not
+// The program should end when 0 is the input. The following is an example of the
+// execution of your program
+
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(){
+
+    int number;
+
+    do{
+
+        printf("Please input an integer: \n");
+        scanf("%d", &number);
+
+        if(number/10000 > 1 && number/10000 < 10){
+
+            printf("You input is a five-digit number: %d \n", number);
+
+        }
+    }while(number != 0);
+
+    printf("Thank you for using my software. Bye! ");
+
+    return 0;
+}
