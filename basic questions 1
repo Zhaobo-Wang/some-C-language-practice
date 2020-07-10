@@ -1,0 +1,88 @@
+//using codeblocks to compile
+
+
+// lab questions:
+
+// 1) Write a program to compute the sum of all numbers that are multiples of 4,
+// between 30 and 1000, in three different ways: with a for loop,
+// a while loop and a do-while loop. After each loop print the value on the screen.
+
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// 第一题 我写了三个不同的loop
+// 可以在main function里面 call 不同的loop
+// 效果都是一样的
+
+
+int forLoopSum();
+int whileLoopSum()；
+int doWhileLoopSum()；
+
+int main(){
+
+    printf ("the sum is %d after using for loop\n", forLoopSum());
+
+    printf ("the sum is %d after using while loop\n", whileLoopSum());
+
+    printf ("the sum is %d after using do while loop\n", doWhileLoopSum());
+
+
+}
+
+
+int forLoopSum(){
+
+    int sum;
+
+    for (int i = 30; i <= 1000; i++){
+        if (i % 4 == 0){
+            sum += i;
+        }
+    }
+
+    return sum;
+}
+
+
+int whileLoopSum(){
+
+    int sum1;
+
+    int i = 30;
+
+    while( i >=30 && i <= 1000){
+
+        if (i % 4 == 0){
+
+            sum1 += i;
+        }
+
+        i++;
+    }
+    return sum1;
+}
+
+
+int doWhileLoopSum(){
+
+    int sum2;
+
+    int i = 30;
+
+    do{
+        if (i % 4 == 0){
+            sum2 += i;
+        }
+        i++;
+    }
+
+    while( i <= 1000);
+
+    return sum2;
+}
+
+
+
+
