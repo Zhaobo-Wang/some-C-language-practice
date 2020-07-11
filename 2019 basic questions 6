@@ -1,0 +1,41 @@
+//questions:
+// A right triangle can have sides that are all integers. The set of three integer
+// values for the sides of a right triangle is called a Pythagorean triple
+// These three sides must satisfy the relationship that the sum of the squares of two
+// of the sides is equal to the square of the hypotenuse. Find all Pythagorean triples
+// for side1 , side2 and the hypotenuse all no larger than 400, with side1 <= side2.
+// Use a triple-nested for loop that simply tries all possibilities.
+// This is an example of the brute-force approach.
+
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(){
+
+    int side_1, side_2, hyp;
+
+    int total =0;
+    
+// 注意 for loop 的前后顺序， nested loop
+
+    for(side_2 = 1; side_2 < 401; side_2 ++){
+
+        for (side_1 = 1; side_1 <= side_2; side_1 ++){
+
+            for(hyp = 1; hyp < 401; hyp ++){
+
+                if (side_1*side_1 + side_2*side_2 == hyp * hyp){
+
+                    printf("Triple found. Side 1 is %d. Side 2 is %d. Hyp is %d.\n", side_1, side_2, hyp);
+
+                    total++;
+                }
+            }
+        }
+    }
+
+    printf("Total number of triples: %d", total);
+
+    return 0;
+
+}
