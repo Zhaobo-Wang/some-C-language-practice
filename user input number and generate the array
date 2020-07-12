@@ -1,0 +1,33 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(){
+
+    int number;
+
+    int size = 3;
+
+    int array[size];
+
+    array[0] = 1;
+    array[1] = 2;
+    array[2] = 3;
+
+    for (int i = 0; i < 3; i++){
+
+        printf("Enter the number: \n");
+        scanf("%d", &number);
+
+        array[i] = number;
+
+    }
+
+    for (int i =0; i < 3; i++){
+
+        printf("%d, ", array[i]);
+
+    }
+    return 0;
+}
+
+
