@@ -1,0 +1,83 @@
+// question:
+// Write a program which reads n integers from the standard input,
+// prints the smallest number
+// prompt the user first to input the value of n, which has to be positive
+// check if the input is valid and in case it is not,
+// keep asking the user for a correct input.
+// Then prompt the user to input each number
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdbool.h>
+
+
+int findsize();
+
+
+int main(){
+
+    int n = findsize();
+
+    printf("The size of the array: %d \n", n);
+
+    int c[n];
+
+    printf("Please input %d integers: \n", n);
+
+    for(int i = 0; i<n; i++){
+
+        scanf("%d", &c[i]);
+
+    }
+
+    printf("The array is displaying: \n");
+
+    for(int i = 0; i < n; i++){
+
+        printf("%d, ", c[i]);
+    }
+
+    int min = c[0];
+
+    for (int i = 0; i < n; i++){
+
+        if(c[i] < min){
+
+            min = c[i];
+        }
+    }
+
+    printf("\nThe lowest number is %d", min);
+
+    return 0;
+
+}
+
+
+int findsize(int size){
+
+    bool size_incorrect = true;
+
+    while (size_incorrect){
+
+        printf("how many integer you want to input? \n");
+        scanf("%d", &size);
+
+        if (size > 0){
+
+            size_incorrect = false;
+
+        }else{
+
+            printf("please enter the correct size ! \n");
+        }
+    }
+
+    return size;
+
+}
+
+
+
+
+
