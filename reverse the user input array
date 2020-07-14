@@ -1,0 +1,42 @@
+/*
+ Let user enter a array list, and output is the reverse of the array
+
+*/
+
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(){
+    int n;
+    printf("Enter the size of the array:\n ");
+    scanf("%d", &n);
+
+    int c[n];
+
+    printf("Enter the elements %d in the array: ", n);
+
+    for (int i = 0 ; i < n; i++){
+        scanf("%d", &c[i]);
+    }
+
+    reverse(c,n);
+
+    for (int i = 0 ; i < n; i++){
+        printf("The elements are %d. \n", c[i]);
+    }
+
+    return 0;
+
+}
+
+void reverse(int c[], int n){
+    int i, j; int temp;
+
+    for(i = 0, j = n - 1; i < j; i++, j--){
+        temp = c[i];
+        c[i] = c[j];
+        c[j] = temp;
+    }
+}
+
+
