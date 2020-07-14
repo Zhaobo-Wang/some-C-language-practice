@@ -1,0 +1,33 @@
+# include <stdio.h>
+# include <stdbool.h>
+int main(){
+
+    int n;
+
+    printf("Enter the number you want to check: \n");
+    scanf("%d", &n);
+
+    findPrime(n);
+
+}
+
+void findPrime(n){
+
+    bool is_prime = true;
+
+    int i;
+
+    for (i = 2; i < n; i ++){
+
+        if(n % i == 0){
+            is_prime = false;
+        }
+    }
+
+    if (is_prime){
+
+        printf("Number is prime");
+
+    }
+
+}
