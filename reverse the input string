@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    char x[20];
+
+    puts("Please enter the string: ");
+
+    gets(x);
+
+    printf("The string is %s \n", x);
+
+    reverse_string(x);
+
+    printf("The string is %s", x);
+
+}
+
+void reverse_string( char x[]){
+    int i, j, size = 0, temp;
+    while(x[size] != '\0'){
+        size++;
+    }
+
+    for (i = 0, j = size - 1; i < size/2; i++, j --){
+        temp = x[i];
+        x[i] = x[j];
+        x[j] = temp;
+    }
+}
+
+
+
+
