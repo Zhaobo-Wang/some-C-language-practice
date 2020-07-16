@@ -5,14 +5,16 @@ int main(){
 
     int nrows, ncols;
 
+    printf("Enter the row size of the matrix: ");
+    scanf("%d", &nrows);
+    printf("Enter the col size of the matrix: ");
+    scanf("%d", &ncols);
+
     int mat[nrows][ncols];
 
-    printf("Enter the row and col size of the matrix: ");
-    scanf("%d%d", &nrows, &ncols);
+    for(int i = 0; i < nrows; i++){
 
-    for(int i = 0; i < nrows; ++i){
-
-        for(int j = 0; j < ncols ; ++j){
+        for(int j = 0; j < ncols ; j++){
 
             printf("Enter the elements in the matrix [%d] row and [%d] col: \n",i,j);
 
@@ -21,9 +23,9 @@ int main(){
         }
     }
 
-    for(int i = 0; i < nrows; ++i){
+    for(int i = 0; i < nrows; i++){
 
-        for(int j = 0; j < ncols ; ++j){
+        for(int j = 0; j < ncols ; j++){
 
             printf("%d\t", mat[i][j]);
         }
@@ -33,6 +35,7 @@ int main(){
     }
 
 }
+
 
 
 
