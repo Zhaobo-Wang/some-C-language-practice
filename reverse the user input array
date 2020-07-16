@@ -11,7 +11,7 @@ int main(){
     printf("Enter the size of the array:\n ");
     scanf("%d", &n);
 
-    int c[n];
+    int c[n];//一定要记得先储存size的值，在define 整个array
 
     printf("Enter the elements %d in the array: ", n);
 
