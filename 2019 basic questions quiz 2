@@ -1,0 +1,32 @@
+//Ask the user to input a sequence of 20 integers. Store them in an array. Determine if the sequence is sorted in 
+// non-decreasing order
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdbool.h>
+
+int main(){
+
+    int c[20];
+    bool is_ascending = true;
+
+    for (int i = 0; i < 20; i++){
+
+        printf("Enter 20 integers:");
+        scanf("%d", &c[i]);
+
+    }
+    for (int i = 0; i < 20; i++){
+
+        if (c[i+1] < c[i]){
+
+                is_ascending = false;
+
+        }
+    }
+    if (is_ascending){
+        printf("The sequence is in non_decresing order.");
+    }else{
+        printf("The sequence is not in non_decreasing order.");
+    }
+}
