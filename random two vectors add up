@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int* addArrays(int a[], int b[],int size);
+
+void printArray(int* a);
+
+int main(){
+
+srand(time(0));
+
+int* aptr;
+int* bptr;
+int arraySize = 5;
+
+int* sumptr;
+
+aptr = malloc(arraySize * sizeof(int));
+bptr = calloc(arraySize,sizeof(int));
+
+//populate array
+for(int i = 0;i < 5; i++){
+
+*(aptr + i) = rand() % 10;
+
+*(bptr + i) = rand() % 10;
+
+}
+
+//
+for(int i = 0;i < 5; i++){
+
+printf("a[%d]=%d, b[%d]=%d\n",i,aptr[i],i,bptr[i]);
+
+}
+
+printf("\n\n");
+
+sumptr = addArrays(aptr,bptr,arraySize);
+
+for(int i=0; i< 5; i++){
+
+printf("sum[%d]=%d\n",i,*(sumptr+i));
+
+}
+
+free(aptr);
+free(bptr);
+free(sumptr);
+
+}
+
+
+int* addArrays(int a[], int b[],int size){
+
+int* p =calloc(size,sizeof(int));
+
+
+for(int i; i< size;i++){
+
+*(p+i) = a[i] + b[i];
+
+}
+
+return p;
+
+}
+
+void printArray(int* a){
+
+for(int i; i< 5; i++){
+
+    printf("%d, ",a[i]);
+
+}
+}
+
