@@ -1,0 +1,42 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+void letter_freq(const char word[], int freq[]){
+
+    int c;
+
+    while (*word) {//array名字的pointer 指向第零个
+
+        c = (*word++) - 'A'; // 指针改变++，用减法算出是哪个number对应的letter
+
+        if (c < 26 || (c -= ('a' - 'A')) < 26){
+
+            freq[c]++;
+
+        }
+
+    }
+
+}
+
+int main(){
+
+    char x[50];
+    int freq[26] = {0};
+
+    puts("Enter the letter");
+
+    gets(x);
+
+
+    letter_freq(x, freq);
+
+    for(int i = 0; i < 26; i ++){
+
+        printf("[%d] = %d", i , freq[i]);
+
+    }
+
+    return 0;
+
+}
