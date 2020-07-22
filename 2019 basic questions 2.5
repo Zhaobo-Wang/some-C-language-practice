@@ -1,0 +1,30 @@
+# include <stdio.h>
+# include <stdlib.h>
+void string_copy(const char source[], char destination[], int n);
+
+int main(){
+
+    int size = 0;
+    char a[size];
+    char b[size];
+
+    puts("Enter the input string:");
+    gets(a);
+    puts("");
+
+    for (int i = 0; a[i] != '\0'; i++){
+
+        size++;
+
+    }
+
+
+    printf("the string size is %d", size);
+
+   // string_copy(a,b,size);
+
+    return 0;
+}
+
+
+//void string_copy()
