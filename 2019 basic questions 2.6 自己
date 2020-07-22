@@ -39,7 +39,10 @@ void efficient(const int source[], int val[], int pos[], int Size){
         if(source[i] != 0){
 
                 val[j] = source[i];
-                pos[j++] = i;//这个部分用的很巧妙
+                pos[j++] = i;//这个部分用的很巧妙，也可以拆开写两行
+                
+             // pos[j] = i;
+             // j++;
 
             }
     }
