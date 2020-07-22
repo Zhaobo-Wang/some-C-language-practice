@@ -6,7 +6,7 @@ int main(){
 
     int size = 0;
     char a[size];
-    char b[size];
+    char b[10];
 
     puts("Enter the input string:");
     gets(a);
@@ -18,13 +18,44 @@ int main(){
 
     }
 
-
-    printf("the string size is %d", size);
-
-   // string_copy(a,b,size);
+    string_copy(a,b,size);
 
     return 0;
 }
 
 
-//void string_copy()
+void string_copy(const char source[], char destination[], int n){
+
+    if(sizeof(destination)/sizeof(char) > n){
+
+        for ( int i = 0; i < n ; i ++){
+
+            destination[i] = source [i];
+
+        }
+
+    }else{
+
+        for ( int i = 0; i < sizeof(destination)/sizeof(char) ; i ++){
+
+            destination[i] = source [i];
+
+        }
+
+    }
+
+    for (int i = 0; destination[i] != '\0' ; i++ ){
+
+        printf("The destination array stored [%d] is %c. \n", i, destination[i]);
+
+    }
+
+}
+
+
+
+
+
+
+
+
