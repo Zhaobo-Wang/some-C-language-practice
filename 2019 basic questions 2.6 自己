@@ -1,0 +1,60 @@
+// 原array   a[8] = {0, 0, 23, 0, -7, 0, 0, 48}
+// 存储之后  val： 23， -7， 48
+// 存储之后  pos： 2， 4， 7
+
+
+# include <stdio.h>
+# include <stdlib.h>
+#define k 3
+
+void efficient(const int source[], int val[], int pos[], int size);
+//size 是 source array size
+
+//void reconstruct(int source[], int m, const int val[], const int pos[], int n);
+
+int main(){
+
+    test();
+
+    return 0;
+}
+
+void test(){
+
+    int a[8] = {0, 0, 23, 0, -7, 0, 0, 48};
+    int b[3];
+    int c[3];
+
+    efficient(a, b, c, 8);
+
+
+}
+
+void efficient(const int source[], int val[], int pos[], int Size){
+
+    int j = 0;
+
+    for(int i = 0; i < Size ; i ++){
+
+        if(source[i] != 0){
+
+                val[j] = source[i];
+                pos[j++] = i;//这个部分用的很巧妙
+
+            }
+    }
+
+
+
+    for(int j = 0; j < k; j++){
+
+       printf("The val array [%d] is %d \n", j, val[j]);
+
+    }
+
+    for(int j = 0; j < k; j++){
+
+       printf("The pos array [%d] is %d \n", j, pos[j]);
+
+    }
+}
