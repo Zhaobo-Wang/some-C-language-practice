@@ -1,0 +1,60 @@
+//use malloc()/calloc() function create dynamic memory
+// 把str1 和 str2 的内容输入进 str3 ，str3 是一个 dynamic memory
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+
+char *my_strcat(const char *const str1, const char *const str2);
+void test();
+
+int main(){
+
+    test();
+
+    return 0;
+}
+
+void test(){
+
+    printf("%s\n", my_strcat("Hello", "world!"));
+
+}
+
+char *my_strcat(const char *const str1, const char *const str2){
+
+    char *str3;//concatenating str1 and str2
+
+    int size1 = strlen(str1);
+    int size2 = strlen(str2);
+
+    int n = size1 + size2;
+
+    str3 = malloc(n*sizeof(char));
+
+    for(int i = 0; i < size1 ; i ++){
+
+        if(str1[i] != '\n'){
+
+            str3[i] = str1[i];
+
+        }else{
+
+            size1--;
+
+        }
+
+    for(int i = 0; i < size2 ; i ++){
+
+        str3[i + size1] = str2[i];
+    }
+
+    }
+
+    return str3;
+
+    free(str3);
+
+    free(str1);
+
+    free(str2);
