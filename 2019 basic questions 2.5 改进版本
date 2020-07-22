@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define size 20
+
+int main(){
+
+    question5();
+
+    return 0;
+
+}
+
+void question5(){
+
+    char a[] = "I am good.";//size less than 20
+    char store1[size];
+    string_copy(a, store1, size);
+    puts(store1);
+
+    char b[] = "I am good. I am very";//size is 20
+    char store2[size];
+    string_copy(b, store2, size);
+    puts(store2);
+
+    char c[] = "I am good. I am very good.";//size is more than 20
+    char store3[size];
+    string_copy(c, store3, size);
+    puts(store3);
+
+}
+
+void string_copy(const char source[], char destination[], int n){
+
+    for (int i = 0; i < n - 1; i++){
+
+        destination[i] = source[i];
+
+    }
+
+    destination [n - 1] = '\0';
+
+
+}
+
