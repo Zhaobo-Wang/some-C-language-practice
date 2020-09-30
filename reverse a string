@@ -1,0 +1,41 @@
+# include <stdio.h>
+
+void reverseString(char x[]){
+
+    int size = 0;
+
+    while(x[size] !='\0'){
+
+        size++;
+
+    }
+    int i;
+    char temp;
+
+    for(i = 0 ; i < size/2;i++){
+
+        temp = x[i];
+        x[i] = x[size - i - 1];
+        x[size - i - 1] = temp;
+
+    }
+
+}
+
+int main(){
+
+    char b[] = "blue";
+
+    reverseString(b);
+
+    int i = 0;
+    while(b[i] != '\0'){
+
+            printf("%c\n",b[i]);
+
+            i++;
+        }
+
+    return 0;
+
+}
